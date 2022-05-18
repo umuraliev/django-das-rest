@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 from rest_framework.generics import ListAPIView
 from rest_framework import permissions
 
+
 User = get_user_model()
 
 class RegisterView(APIView):
@@ -34,7 +35,7 @@ class ActivationView(APIView):
             user.activation_code = ''
             user.save()
             return Response({'msg': 'User Succesfully activated'})
-    
+
 
 class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
